@@ -16,7 +16,7 @@ before_install:
 - sfdx --version
 - sfdx plugins --core
 - sfdx force:auth:jwt:grant --clientid 3MVG9CEn_O3jvv0y7vxpmORZn2Okj3vLyVMi2XjmlvB_8EkFtr1Bm7iTxBcNkokssq57_S_ZX_EmzcxUGprIb --jwtkeyfile assets/server.key
-  --username dnguyentiendevhub@sfdx.com -a Dekra -r https://login.salesforce.com -s
+  --username dnguyentiendevhub@sfdx.com -a Dekra -r https://login.salesforce.com -d
 script:
 - sfdx force:org:list
 - sfdx force:org:create -f config/project-scratch-def.json -a cior
