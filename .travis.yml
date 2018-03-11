@@ -19,7 +19,5 @@ before_install:
   --username dnguyentiendevhub@sfdx.com -a Dekra -r https://login.salesforce.com -d
 script:
 - sfdx force:org:list
-- sfdx force:org:create -f config/project-scratch-def.json -a ciorg -v Dekra
-- sfdx force:source:push -u ciorg
-- sfdx force:apex:test:run -u cior -c -r human
-- sfdx force:org:delete -u ciorg -p
+- sfdx force:source:convert -d deploy
+- force:mdapi:deploy -c -d deploy -u Dekra
