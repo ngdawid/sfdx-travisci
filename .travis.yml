@@ -18,6 +18,7 @@ before_install:
 - sfdx force:auth:jwt:grant --clientid 3MVG9CEn_O3jvv0y7vxpmORZn2Okj3vLyVMi2XjmlvB_8EkFtr1Bm7iTxBcNkokssq57_S_ZX_EmzcxUGprIb --jwtkeyfile assets/server.key
   --username dnguyentiendevhub@sfdx.com -a Dekra -r https://login.salesforce.com
 script:
+- sfdx force:org:list
 - sfdx force:org:create -f config/project-scratch-def.json -a cior
 - sfdx force:source:push -u cior
 - sfdx force:apex:test:run -u cior -c -r human
