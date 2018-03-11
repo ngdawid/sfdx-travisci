@@ -20,7 +20,6 @@ before_install:
 script:
 - sfdx force:org:list
 - sfdx force:org:create -f config/project-scratch-def.json -a ciorg -v Dekra
-- sfdx force:org:list
 - sfdx force:source:push -u ciorg
 - sfdx force:apex:test:run -u cior -c -r human
 - sfdx force:org:delete -u ciorg -p
