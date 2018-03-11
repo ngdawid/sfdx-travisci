@@ -15,8 +15,8 @@ before_install:
 - sfdx update
 - sfdx --version
 - sfdx plugins --core
-- sfdx force:auth:jwt:grant --clientid $CONSUMERKEY --jwtkeyfile assets/server.key
-  --username $USERNAME --setdefaultdevhubusername -a IntDev -r https://test.salesforce.com
+- sfdx force:auth:jwt:grant --clientid 3MVG9CEn_O3jvv0y7vxpmORZn2Okj3vLyVMi2XjmlvB_8EkFtr1Bm7iTxBcNkokssq57_S_ZX_EmzcxUGprIb --jwtkeyfile assets/server.key
+  --username dnguyentiendevhub@sfdx.com -a Dekra -r https://login.salesforce.com
 script:
 - sfdx force:org:create -f config/project-scratch-def.json -a ciorg
 - sfdx force:source:push -u ciorg
