@@ -19,7 +19,9 @@ before_install:
   --username dnguyentiendevhub@sfdx.com -a Dekra -r https://login.salesforce.com -d
 script:
 - sfdx force:org:list
-- sfdx force:org:create -f config/project-scratch-def.json -a cior
-- sfdx force:source:push -u cior
+- sfdx force:data:soql:query -q "SELECT Status FROM ScratchOrgInfo WHERE Id='2SR6A0000000135WAA'"
+- sfdx force:org:create -f config/project-scratch-def.json -a ciorg
+- sfdx force:org:list
+- sfdx force:source:push -u ciorg
 - sfdx force:apex:test:run -u cior -c -r human
-- sfdx force:org:delete -u cior -p
+- sfdx force:org:delete -u ciorg -p
